@@ -90,18 +90,49 @@ section h3 {
 }
 
 .participants-list {
-  list-style-type: disc;
-  padding-left: 20px;
+  list-style-type: none; /* hide bullets */
+  padding-left: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .participants-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 0.9rem;
   color: #333;
-  margin-bottom: 4px;
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.02);
+}
+
+.participant-email {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 8px;
+}
+
+.participant-remove {
+  background: transparent;
+  border: none;
+  color: #c62828;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
   padding: 6px 8px;
   border-radius: 4px;
-  background: rgba(0,0,0,0.02);
+  transition: background-color 0.12s, color 0.12s;
+}
+
+.participant-remove:hover,
+.participant-remove:focus {
+  background: rgba(198,40,40,0.08);
+  outline: none;
 }
 
 .no-participants {
